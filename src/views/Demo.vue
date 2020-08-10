@@ -162,7 +162,6 @@ export default {
 
 .lower {
   background-color: var(--darkSlate);
-  height: 100%;
   position: relative;
   padding: 6rem 0 ;
   text-align: left;

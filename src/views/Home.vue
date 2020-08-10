@@ -11,6 +11,7 @@
 export default {
   name: 'Home',
 };
+
 </script>
 
 <style lang="scss">
@@ -20,13 +21,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
 
     &__img {
       width: 20rem;
       height: 20rem;
       transition: transform .4s;
+
       &:hover {
         transform: scale(1.2);
       }
