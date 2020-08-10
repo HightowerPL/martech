@@ -1,10 +1,12 @@
 <template>
   <header class="header">
       <div class="header--box">
-          <button class="header__btn--back btn btn--alt">
-              <img src="../assets/back-icon.svg" alt="back icon" class="header__img--back">
-              back to articles
-          </button>
+          <router-link to="/">
+            <button class="header__btn--back btn btn--alt">
+                <img src="../assets/back-icon.svg" alt="back icon" class="header__img--back">
+                back to articles
+            </button>
+          </router-link>
       </div>
 
         <div class="header__logo">
