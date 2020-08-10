@@ -311,6 +311,7 @@ export default {
   &__btn--submit {
     padding: 1.2rem;
     width: 100%;
+    min-width: 20rem;
     max-width: 26.2rem;
     display: flex;
     justify-content: space-between;

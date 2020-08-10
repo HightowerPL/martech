@@ -20,6 +20,8 @@ html {
   --hotPink: #e72176;
   --white: #ffffff;
   --lightGray: #e5e5e5;
+  --md-theme-default-primary: var(--electricTeal);
+  --md-theme-default-primary-on-background: var(--electricTeal);
   height: 100%;
   width: 100%;
   overflow-x:hidden;

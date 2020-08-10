@@ -9,9 +9,9 @@
           </router-link>
       </div>
 
-        <div class="header__logo">
+        <h1 class="header__logo">
             <img src="../assets/love-martech-footer-logo.svg" alt="logo">
-        </div>
+        </h1>
   </header>
 </template>
 
@@ -29,12 +29,13 @@ export default {
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 35px 0px;
+    padding: 3.5rem 0px;
     background-color: var(--darkSlate);
 
     &__logo {
-        max-width: 153px;
+        max-width: 15.3rem;
         margin: 0 auto;
+        line-height: 2rem;
     }
 
     &__img {
@@ -49,8 +50,7 @@ export default {
             opacity: .5;
             position: absolute;
             left: 2rem;
-            margin-top: -.5rem;
-            padding-left: 25px;
+            padding-left: 2.5rem;
             background: transparent;
             color: var(--white);
             font-size: 0;
@@ -58,6 +58,7 @@ export default {
             align-items: center;
             height: auto;
             transition: opacity .4s;
+
             &:hover {
                 opacity: 1;
             }
