@@ -15,7 +15,7 @@
       </div>
       <div class="footer__row--bottom">
         <div class="footer__col--convo">
-          <h4 class="footer__text--heading">start a conversation</h4>
+          <h3 class="footer__text--heading">start a conversation</h3>
           <ul class="footer__list footer__list--convo">
             <li class="footer__list-item">
               <a
@@ -35,7 +35,7 @@
         </div>
 
         <div class="footer__col--find-us">
-          <h4 class="footer__text--heading">find us</h4>
+          <h3 class="footer__text--heading">find us</h3>
           <ul class="footer__list footer__list--find-us">
             <li class="footer__list-item">Clevertouch HQ</li>
             <li class="footer__list-item">The Old Forge,</li>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="footer__col--newsletter">
-          <h4 class="footer__text--heading">never miss a thing</h4>
+          <h3 class="footer__text--heading">never miss a thing</h3>
           <form action="POST" class="footer__form--newsletter newsletter">
             <div class="newsletter__input-wrapper">
               <input
