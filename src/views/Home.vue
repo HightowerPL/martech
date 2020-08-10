@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <h1>Hello</h1>
-    <router-link to="/demo">Demo</router-link>
+    <router-link to="/demo">
+      <img class="home__img" src="../assets/play1.svg" alt="play icon">
+    </router-link>
   </div>
 </template>
 
@@ -9,7 +10,26 @@
 
 export default {
   name: 'Home',
-  components: {
-  },
 };
 </script>
+
+<style lang="scss">
+  .home {
+    color: var(--white);
+    background-color: var(--darkSlate);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+
+    &__img {
+      width: 20rem;
+      height: 20rem;
+      transition: transform .4s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+</style>

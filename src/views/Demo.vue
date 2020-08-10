@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <Header></Header>
 
     <section class="screen">
@@ -15,7 +16,9 @@
       </div>
     </section>
 
-    <Card :mobile-open="mobileRequestOpen" @close="closeCard"></Card>
+    <transition name="slide-fade">
+      <Card v-show="openCard" @close="closeCard"></Card>
+    </transition>
 
     <section class="lower">
       <div class="container">
@@ -32,17 +35,20 @@
       </div>
     </section>
 
-    <div class="request-wrap">
-      <button
-        class="request-wrap__btn btn btn--primary"
-        @click="mobileRequestOpen = true">
-        <span>
-        Request a Demo
-        </span>
-      </button>
-    </div>
+    <transition name="slide-fade-down">
+      <div class="request-wrap" v-show="showRequestBtn">
+        <button
+          class="request-wrap__btn btn btn--primary"
+          @click="openCard = true">
+          <span>
+          Request a Demo
+          </span>
+        </button>
+      </div>
+    </transition>
 
     <Footer></Footer>
+
   </div>
 </template>
 
@@ -71,59 +77,34 @@ export default {
         ['star', 'Quickly build brand emails'],
         ['arrow', 'Review and approve teams emails and pages'],
       ],
-      mobileRequestOpen: false,
+      openCard: false,
+      showRequestBtn: false,
     };
+  },
+  created() {
+    window.addEventListener('resize', this.resizeHandler);
+    this.openCard = window.outerWidth > 1240;
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resizeHandler);
   },
   methods: {
     closeCard() {
-      this.mobileRequestOpen = false;
+      this.openCard = false;
+    },
+    resizeHandler() {
+      if (window.outerWidth > 1240) {
+        this.openCard = true;
+        this.showRequestBtn = false;
+      } else {
+        this.showRequestBtn = true;
+      }
     },
   },
 };
 </script>
 
 <style lang="scss">
-body,
-html {
-  --darkSlate: #253746;
-  --darkerSlate: rgba(0,0,0,.1);
-  --electricTeal: #00bcb5;
-  --coolGray: #98a4af;
-  --black: #000000;
-  --hotPink: #e72176;
-  --white: #ffffff;
-  --lightGray: #e5e5e5;
-  height: 100%;
-  width: 100%;
-  overflow-x:hidden;
-  margin: 0;
-  padding: 0;
-  font-size: 10px;
-  line-height: normal;
-  background-color: var(--darkSlate);
-
-   * {
-    box-sizing: border-box;
-  }
-}
-
-.mobile-open {
-  display: block;
-}
-
-a {
-  color: inherit;
-}
-
-#app {
-  font-family: 'museo-sans-rounded', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  font-size: 1.4rem;
-  color: #2c3e50;
-  background-color: var(--darkSlate);
-}
 
 .container {
   max-width: 1240px;
@@ -318,14 +299,31 @@ a {
   }
 }
 
-@media screen and (min-width: 1240px) {
-  .request-wrap {
-    display: none;
-  }
+.slide-fade-enter-active {
+  transition: all .6s ease;
+}
 
-  .screen {
+.slide-fade-leave-active {
+  transition: all .6s ease;
+}
 
-  }
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+//Slide down fade
+.slide-fade-down-enter-active {
+  transition: all .6s ease;
+}
+
+.slide-fade-down-leave-active {
+  transition: all .6s ease;
+}
+
+.slide-fade-down-enter, .slide-fade-down-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
 }
 
 .md-theme-default a:not(.md-button) {

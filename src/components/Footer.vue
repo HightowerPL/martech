@@ -113,7 +113,7 @@ export default {
 <style scoped lang="scss">
 .footer {
   background-color: rgba(0, 0, 0, 0.1);
-  padding: 4rem 0 5rem;
+  padding: 4rem 0 8rem;
   &__row {
     &--top {
       margin-bottom: 4rem;
@@ -249,6 +249,7 @@ export default {
     &-wrapper {
       margin-bottom: 1.6rem;
       position: relative;
+
     }
 
     &--mail {
@@ -263,11 +264,11 @@ export default {
 
     &--consent {
       visibility: hidden;
-      margin-right: 1rem;
-      cursor: pointer;
+      margin-right: 1.5rem;
 
       &:hover {
         cursor: pointer;
+
         ~ label:before {
           border-color: var(--electricTeal);
         }
@@ -287,8 +288,9 @@ export default {
       }
 
       &:checked {
+
         ~ label:before {
-          background-color: var(--electricTeal);
+          background: var(--electricTeal) url("../assets/check.svg") center center no-repeat;
         }
       }
     }
@@ -300,6 +302,7 @@ export default {
   }
 
   &__btn {
+
     &--submit {
       background-color: var(--electricTeal);
       color: var(--white);

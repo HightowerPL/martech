@@ -1,5 +1,5 @@
 <template>
-<div class="card-wrapper" :class="{showMobile: mobileOpen}">
+<div class="card-wrapper" >
   <div class="card-container">
     <div class="card" >
       <div class="md-layout md-gutter">
@@ -264,7 +264,6 @@ export default {
   background-color: var(--white);
 
   &-wrapper {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
